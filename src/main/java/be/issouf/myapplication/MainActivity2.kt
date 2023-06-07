@@ -1,11 +1,8 @@
 package be.issouf.myapplication
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -15,36 +12,25 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import be.issouf.myapplication.ui.theme.MyApplicationTheme
 
-class MainActivity : ComponentActivity() {
-
-
+class MainActivity2 : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyApplicationTheme{
+            MyApplicationTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize()
-                        .clickable {
-                                   Intent(this, MainActivity2::class.java).also {
-                                       startActivity(it)
-                                       finish()
-                                   }
-                        },
-                    color = MaterialTheme.colorScheme.background) 
-                {
-                    Greeting("first Activity")
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    Greeting2("seconde Activity")
                 }
             }
         }
-
     }
-
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) 
-{
+fun Greeting2(name: String, modifier: Modifier = Modifier) {
     Text(
         text = "Hello $name!",
         modifier = modifier
@@ -53,8 +39,8 @@ fun Greeting(name: String, modifier: Modifier = Modifier)
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun GreetingPreview2() {
     MyApplicationTheme {
-        Greeting("Android")
+        Greeting2("Android")
     }
 }
